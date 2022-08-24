@@ -28,11 +28,6 @@ HAQQ_PEERS=
 
 sleep 1
 
-curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge/state_sync.sh
-sh state_sync.sh
-
-sleep 1
-
 echo "export HAQQ_WALLET=${HAQQ_WALLET}" >> $HOME/.bash_profile
 echo "export HAQQ=${HAQQ}" >> $HOME/.bash_profile
 echo "export HAQQ_ID=${HAQQ_ID}" >> $HOME/.bash_profile
@@ -113,6 +108,10 @@ sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persisten
 
 sleep 1
 
+curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge/state_sync.sh
+sh state_sync.sh
+
+sleep 1
 
 # config pruning
 pruning="custom"
